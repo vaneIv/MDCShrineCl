@@ -32,7 +32,7 @@ object ImageRequester {
                 }
 
                 @Synchronized
-                override fun getBitmap(url: String?): Bitmap {
+                override fun getBitmap(url: String): Bitmap? {
                     return lruCache.get(url)
                 }
 
