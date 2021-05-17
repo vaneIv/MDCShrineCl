@@ -32,7 +32,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="132dp"
             android:text="@string/app_name"
-            android:textAppearance="@style/TextAppearance.Shrine.Title"/>
+            android:textAppearance="@style/TextAppearance.Shrine.Title" />
 
         <!-- Snippet from "Add text fields" section goes here. -->
         <com.google.android.material.textfield.TextInputLayout
