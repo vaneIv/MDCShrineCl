@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.*
 import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,7 +34,9 @@ class ProductGridFragment : Fragment() {
             NavigationIconClickListener(
                 activity!!,
                 view.product_grid,
-                AccelerateDecelerateInterpolator()
+                AccelerateDecelerateInterpolator(),
+                ContextCompat.getDrawable(context!!, R.drawable.shr_branded_menu), //Menu open icon
+                ContextCompat.getDrawable(context!!, R.drawable.shr_close_menu) //Menu close icon
             )
         )
 
