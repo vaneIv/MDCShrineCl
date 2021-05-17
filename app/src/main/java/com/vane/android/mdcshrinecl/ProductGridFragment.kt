@@ -3,6 +3,7 @@ package com.vane.android.mdcshrinecl
 import android.os.Build
 import android.os.Bundle
 import android.view.*
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -28,6 +29,13 @@ class ProductGridFragment : Fragment() {
 
         // Set up the toolbar.
         (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
+        view.app_bar.setNavigationOnClickListener(
+            NavigationIconClickListener(
+                activity!!,
+                view.product_grid,
+                AccelerateDecelerateInterpolator()
+            )
+        )
 
         // Set up the RecyclerView
         view.recycle_view.setHasFixedSize(true)
@@ -50,7 +58,8 @@ class ProductGridFragment : Fragment() {
 
         // Set cut corner background for API 23+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            view.product_grid.background = context?.getDrawable(R.drawable.shr_product_grid_background_shape)
+            view.product_grid.background =
+                context?.getDrawable(R.drawable.shr_product_grid_background_shape)
         }
 
         return view
