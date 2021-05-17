@@ -20,8 +20,6 @@ class ProductGridItemDecoration(
         state: RecyclerView.State
     ) {
         outRect.left = smallPadding
-        outRect.right = smallPadding
-        outRect.top = largePadding
-        outRect.bottom = largePadding
+        outRect.right = largePadding
     }
 }
